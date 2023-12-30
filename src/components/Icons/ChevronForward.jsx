@@ -1,4 +1,4 @@
-export const ChevronForward = (props) => {
+ const ChevronForward = (props) => {
   return (
     <svg
       width="6"
@@ -17,3 +17,4 @@ export const ChevronForward = (props) => {
     </svg>
   );
 };
+export default ChevronForward

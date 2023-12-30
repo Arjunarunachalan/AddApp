@@ -1,4 +1,4 @@
-export function ChevronDown(props) {
+ function ChevronDown(props) {
   return (
     <svg
       width="11"
@@ -17,3 +17,4 @@ export function ChevronDown(props) {
     </svg>
   );
 }
+export default ChevronDown

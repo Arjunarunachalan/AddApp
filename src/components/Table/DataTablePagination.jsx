@@ -1,6 +1,7 @@
 import classNames from "classnames";
-import { ChevronDown } from "../icons/ChevronDown";
-import { ChevronForward } from "../icons/ChevronForward";
+import  ChevronForward  from "../icons/ChevronForward";
+import ChevronDown from "../icons/ChevronDown";
+
 
 const DataTablePagination = ({
   pageCount,
