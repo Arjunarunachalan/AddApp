@@ -5,18 +5,16 @@ import { useParams } from "react-router-dom";
 import axiosInstance from "../../Config/axios";
 
 const AdPlayer = () => {
-  const {id} = useParams();
+  const { id } = useParams();
   //const { id } = router.query;
   const [ads, setAds] = useState({});
   console.log(id);
   useEffect(() => {
     if (id && id != null) {
-      axiosInstance
-        .get(`/cms/advt/view-ads/${id}/`)
-        .then((response) => {
-          console.log(response);
-          setAds(response.data.data);
-        });
+      axiosInstance.get(`/cms/advt/view-ads/${id}/`).then((response) => {
+        console.log(response);
+        setAds(response.data.data);
+      });
     }
   }, [id]);
 
@@ -48,7 +46,7 @@ const AdPlayer = () => {
       >
         <Marquee containerClassName="marquee-text-top" text={ads.top_text} />
       </div>
-      {ads.ads_file && <VideoJS options={videoJsOptions} />}
+      {ads.media_file && <VideoJS options={videoJsOptions} />}
       <div
         style={{
           position: "absolute",
