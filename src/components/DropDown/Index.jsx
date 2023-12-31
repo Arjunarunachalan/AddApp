@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ChevronDown } from "../icons/ChevronDown";
+import { useState } from "react";
+import ChevronDown from "../icons/ChevronDown";
 import classNames from "classnames";
 
 const Dropdowns = ({
