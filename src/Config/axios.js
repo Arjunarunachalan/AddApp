@@ -12,12 +12,12 @@ axiosInstance.interceptors.request.use((config) => {
   if (
     token !== undefined &&
     token !== null &&
-    config.url &&
-    !noTokensPath.includes(config.url)  
+    // config.url &&
+    !noTokensPath.includes(window.location.pathname)  
   ) {
     config.headers = Object.assign(
       {
-        Authorization: `Bearer  ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       config.headers
     );

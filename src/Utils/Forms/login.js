@@ -56,6 +56,7 @@ let loginForm = {
     onAfterApiSuccess:(res)=>{
       console.log(res.data.access_token);
       localStorage.setItem("accesToken", res.data.access_token);
+      window.location.href = "/dealer/advertismentlist";
 
     }
   },

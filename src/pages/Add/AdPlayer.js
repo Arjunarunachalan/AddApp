@@ -5,20 +5,23 @@ import { useParams } from "react-router-dom";
 import axiosInstance from "../../Config/axios";
 
 const AdPlayer = () => {
-  const router = useParams();
-  const { id } = router.query;
+  const {id} = useParams();
+  //const { id } = router.query;
   const [ads, setAds] = useState({});
-
+  console.log(id);
   useEffect(() => {
     if (id && id != null) {
-      axiosInstance.get(`/cms/advt/advertisement-details/${id}`).then((response) => {
-        console.log(response);
-        setAds(response.data.data);
-      });
+      axiosInstance
+        .get(`/cms/advt/view-ads/${id}/`)
+        .then((response) => {
+          console.log(response);
+          setAds(response.data.data);
+        });
     }
   }, [id]);
 
   const playerRef = useRef(null);
+  console.log(ads);
 
   const videoJsOptions = {
     autoplay: true,
@@ -27,7 +30,7 @@ const AdPlayer = () => {
     fluid: true,
     src: [
       {
-        src: ads.ads_file,
+        src: ads.media_file,
         type: "video/mp4",
       },
     ],
