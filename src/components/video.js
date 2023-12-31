@@ -5,28 +5,14 @@ import "video.js/dist/video-js.css";
 export const VideoJS = ({ options }) => {
   const { src } = options;
 
-  const video = useRef(null);
-  useEffect(() => {
-    // const player = videojs("my-video", {
-    //   autoplay: true,
-    // });
-    // let video = document.querySelector("#my-video");
-    // console.log(video);
-    // // video.addEventListener("load", () => {
-    // if (video.paused || video.ended) {
-    //   video.play();
-    // }
-    // });
-  }, []);
-
   return (
     <div>
       <video
-        ref={video}
         id="my-video"
         className="video-js"
-        autoPlay
+        autoPlay="true"
         muted
+        loop
         style={{ width: "100vw", height: "100vh" }}
       >
         <source src={src[0].src} type="video/mp4" />
