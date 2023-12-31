@@ -28,7 +28,7 @@ const AdPlayer = () => {
     fluid: true,
     src: [
       {
-        src: "https://www.youtube.com/watch?v=K_CbgLpvH9E",
+        src: ads.media_file,
         type: "video/mp4",
       },
     ],
